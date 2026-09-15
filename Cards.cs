@@ -19,6 +19,7 @@ class Cards
 
     public static List<Cards> CreateDeck()
     {
+        // Initializes the List<Cards> deck collection
         List<Cards> deck = new List<Cards>();
 
         string[] ranks = {
@@ -29,6 +30,7 @@ class Cards
             "♣", "♦", "♥", "♠"
         };
 
+        // Loops to populate the deck with all 52 unique Suit & Rank combinations
         foreach (string suit in suits)
         {
             for (int i = 0; i < ranks.Length; i++)
@@ -69,6 +71,7 @@ class Cards
          
          return deck*/
 
+    // Iterates through and displays each card in the deck list
     public static void PrintDeck(List<Cards> cards)
     {
         foreach (Cards card in cards)
@@ -77,7 +80,7 @@ class Cards
         }
     }
 
-    // TODO: Define properties (Suit, Rank, Value) inside the Card class
+    // Defined properties (Suit, Rank, Value) inside the Card class above
     /* import random as rand
         def card()
             foreach i in deck range(52):

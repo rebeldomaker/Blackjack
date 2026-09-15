@@ -16,13 +16,7 @@
             Cards.PrintDeck(deck);
         }
         
-        // TODO: Create a List<Card> deck collection in MainGame.cs
-
         // TODO: Call the deck creation code when the application starts in Main()
-
-        // TODO: Finish the PrintDeck method to iterate through and display each card in the deck
-        
-        // TODO: Write a loop to populate the deck with all 52 unique Suit & Rank combinations
 
     }
 }
