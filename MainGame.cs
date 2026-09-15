@@ -1,6 +1,8 @@
 ﻿namespace Blackjack
 {
+    // Handles entry point and main game flow
     class MainGame
+
     {
         static void Main(string[] args)
         {           
@@ -16,7 +18,6 @@
             Cards.PrintDeck(deck);
         }
         
-        // TODO: Call the deck creation code when the application starts in Main()
 
     }
 }
