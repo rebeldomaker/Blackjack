@@ -2,12 +2,6 @@ namespace Blackjack;
 
 class Cards
 {
-    // TODO: Define properties (Suit, Rank, Value) inside the Card class
-    /* import random as rand
-        def card()
-            foreach i in deck range(52):
-                print(card-deck)*/
-
     public string Rank { get; set; }
     public string Suit { get; set; }
     public int Value { get; set; }
@@ -63,6 +57,33 @@ class Cards
         foreach (Cards card in cards)
         {
             Console.WriteLine($"{card.Rank} of {card.Suit} (Value: {card.Value})");
+        }
+    }
+
+    // TODO: Define properties (Suit, Rank, Value) inside the Card class
+    /* import random as rand
+        def card()
+            foreach i in deck range(52):
+                print(card-deck)*/
+
+    /* @staticmethod
+        def shuffle_deck(deck):
+        # random.shuffle modifies the list directly in place
+        random.shuffle(deck)*/
+
+    public static void ShuffleDeck(List<Cards> deck)
+    {
+        Random rng = new Random();
+        int n = deck.Count;
+
+        for (int i = n - 1; i > 0; i--)
+        {
+            int j = rng.Next(i + 1);
+
+            // Swap deck[i] with deck[j]
+            Cards temp = deck[i];
+            deck[i] = deck[j];
+            deck[j] = temp;
         }
     }
 }
