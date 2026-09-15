@@ -6,8 +6,9 @@ class Cards
     public string Suit { get; set; }
     public int Value { get; set; }
 
-    public Cards(string rank, string suit, int value)
-    {
+    public Cards(string rank, string suit, int value) // constructor, no return type. Regular methods specify what they return (like void, int, or List<Cards>). A constructor has no return type at all—not even void.
+    { // Cards name must match the class name.
+      // It runs automatically when using the 'new' keyword. Its main job is to set up the initial values for a brand new object.
         Rank = rank;
         Suit = suit;
         Value = value;
