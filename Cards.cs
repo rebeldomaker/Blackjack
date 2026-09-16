@@ -35,7 +35,7 @@ class Cards
         {
             for (int i = 0; i < ranks.Length; i++)
             {
-                string rank = ranks[i];
+                string rank = ranks[i]; // This line pulls one rank out of the ranks array based on the current loop counter i and saves it into a local variable named rank.
                 int value;
 
                 if (rank == "Ace")
@@ -98,12 +98,29 @@ class Cards
 
         for (int i = n - 1; i > 0; i--)
         {
-            int j = rng.Next(i + 1);
-
+            int j = rng.Next(i + 1); // picks a random slot index between 0 and i (inclusive) and stores it in the variable j.
+            /*Returns a random integer starting from 0 up to—but not including—x.
+               i + 1: Adding 1 to i ensures that i itself is included as a possible choice for j.
+               int j: Stores that chosen random index so the code can swap deck[i] with deck[j].*/
             // Swap deck[i] with deck[j]
             Cards temp = deck[i];
             deck[i] = deck[j];
             deck[j] = temp;
-        }
+        } // @staticmethod
+          // def shuffle_deck(deck):
+          //     # Python's built-in way to shuffle a list in-place:
+          //     # random.shuffle(deck)
+
+          //     # Or writing out the Fisher-Yates algorithm manually to match your C# line-by-line:
+          //     n = len(deck)
+
+          //     for i in range(n - 1, 0, -1):  # Starts at n - 1, stops at 1, step is -1
+          //         j = random.randint(
+          //             0, i
+          //         )  # picks a random slot index between 0 and i (inclusive)
+
+          //         # Swap deck[i] with deck[j]
+          //         # Python allows swapping two items in one line without needing a 'temp' variable!
+          //         deck[i], deck[j] = deck[j], deck[i]
     }
 }
