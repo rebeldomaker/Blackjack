@@ -17,7 +17,7 @@ class Cards
     } // assignments (Rank = rank;, etc.): The code takes those input values and assigns them to the class properties (Rank, Suit, Value).
       // Storage: Once assigned, that specific instance of Cards holds its own rank, suit, and point value in memory for the rest of the game.
 
-    public static List<Cards> CreateDeck()
+    public static List<Cards> CreateDeck() // "The deck is created when the application starts." we rely on this method/func to be called in the MainGame.cs to do so
     {
         // Initializes the List<Cards> deck collection
         List<Cards> deck = new List<Cards>();
