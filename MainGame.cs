@@ -19,7 +19,7 @@
             // Call Cards.DrawCard(deck) and store the returned card in a variable
             Cards drawnCard = Cards.DrawCard(deck);
 
-            // TODO: Print the drawn card's Rank and Suit to the console so the player can see what they drew
-        }
+            // Print the drawn card's Rank and Suit to the console so the player can see what they drew
+            Console.WriteLine($"You drew the {drawnCard.Rank} of {drawnCard.Suit}!");        }
     }
 }
