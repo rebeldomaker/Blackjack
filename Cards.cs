@@ -31,7 +31,7 @@ class Cards
         };
 
         // Loops to populate the deck with all 52 unique Suit & Rank combinations
-        foreach (string suit in suits)
+        foreach (string suit in suits) // "suit" in this case is a local, temporary variable created just for this loop. Its job: As the foreach loop runs, it holds the current item from the suits array
         {
             for (int i = 0; i < ranks.Length; i++)
             {
