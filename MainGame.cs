@@ -13,16 +13,27 @@
             // Creates the 52-card deck
             List<Cards> deck = Cards.CreateDeck(); // deck = Cards.create_deck()
 
-            // Prints all 52 cards to the console
-            Cards.PrintDeck(deck);
+            // Create a List<Cards> playerHand collection to represent the player's hand (initially empty)
+            List<Cards> playerHand = new List<Cards>(); 
 
-            // Call Cards.DrawCard(deck) and store the returned card in a variable
-            Cards drawnCard = Cards.DrawCard(deck);
+            // Call Cards.DrawCard(deck) twice and add both drawn cards to playerHand
+            for (int i = 0; i < 2; i++) 
+            {
+                Cards drawnCard = Cards.DrawCard(deck);
+                playerHand.Add(drawnCard);
+            }
+               
+            // Display both cards in playerHand to the console using a loop or individual WriteLine statements
+            foreach (Cards card in playerHand)
+            {
+                Console.WriteLine($"You drew {card.Rank} of {card.Suit}");
+            }
 
-            // Print the drawn card's Rank and Suit to the console so the player can see what they drew
-            Console.WriteLine($"You drew the {drawnCard.Rank} of {drawnCard.Suit}!");
-            
-            
+            // Verify playerHand.Count equals 2 to confirm the initial deal is complete
+            if (playerHand.Count == 2) 
+            {
+                Console.WriteLine("Initial deal complete!");
+            }
         }
     }
 }
