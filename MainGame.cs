@@ -106,7 +106,59 @@
                 {
                     Console.WriteLine("You did not enter a valid option. Please enter 'H' or 'S'.");
                 }
-            }
+            } 
+            // Prompt the player to hit or stand after the initial deal
+            
+            Console.WriteLine("Do you want to Hit? Y/N");
+            string choice = "Y";
+            Console.ReadLine().Trim().ToLower();
+            // TODO: Create a loop that continues prompting until the player chooses to hold (stand)
+            while (choice = "Y" || ) // while Y and if the player still has X condition (such as, player can still deal or has cards to deal), then keep prompting to hit or stand 
+            {
+                Console.WriteLine(); // write result of Hit, then prompt to ask user again if they want to hit or, finally, Hold instead
+                Console.ReadLine().Trim().ToLower();
+            } // TODO: If the player chooses to draw (hit):
+            // maybe if loop could of worked, but maybe i can keep it a while loop in this case and result is fine anyway, idk lol
+            
+            /*
+
+            if choice in ['h', 'hit']:
+# - Draw exactly one card using the existing Cards.DrawCard method
+            drawn_card = Cards.draw_card(deck)
+        
+# - Add the card to the player's hand
+            player_hand.append(drawn_card)
+
+# - Display the newly drawn card
+            print(f"You drew: {drawn_card.rank} of {drawn_card.suit}")
+
+# - Recalculate and display the updated hand total (handling Ace logic)
+            score = 0
+            aces = 0
+
+            for card in player_hand:
+            score += card.value
+            if card.rank == "Ace":
+            aces += 1
+
+            while score > 21 and aces > 0:
+            score -= 10
+            aces -= 1
+
+            print(f"Your current score is: {score}")
+
+# - Check if the player busted (score > 21)
+            if score > 21:
+            print("Bust! You went over 21.")
+            break
+
+# TODO: If the player chooses to hold (stand), break out of the prompt loop
+            elif choice in ['s', 'stand']:
+            print("You chose to stand. Turn ends.")
+            break
+
+            else:
+            print("Invalid option. Please enter 'H' or 'S'.")*/
         }
     }
 }
