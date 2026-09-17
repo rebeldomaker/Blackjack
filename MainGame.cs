@@ -20,6 +20,9 @@
             Cards drawnCard = Cards.DrawCard(deck);
 
             // Print the drawn card's Rank and Suit to the console so the player can see what they drew
-            Console.WriteLine($"You drew the {drawnCard.Rank} of {drawnCard.Suit}!");        }
+            Console.WriteLine($"You drew the {drawnCard.Rank} of {drawnCard.Suit}!");
+            
+            
+        }
     }
 }
