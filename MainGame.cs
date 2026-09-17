@@ -109,19 +109,18 @@
             } 
             // Prompt the player to hit or stand after the initial deal
             
-            Console.WriteLine("Do you want to Hit? Y/N");
-            string choice = "Y";
+            Console.WriteLine("Do you wish to hold? (Type HOLD if you want to stand)");
+            string choice = "notHolding";
             Console.ReadLine().Trim().ToLower();
             // TODO: Create a loop that continues prompting until the player chooses to hold (stand)
-            while (choice = "Y" || ) // while Y and if the player still has X condition (such as, player can still deal or has cards to deal), then keep prompting to hit or stand 
+            while (choice = "notHolding" || ) // while Y and if the player still has X condition (such as, player can still deal or has cards to deal), then keep prompting to hit or stand 
             {
                 Console.WriteLine(); // write result of Hit, then prompt to ask user again if they want to hit or, finally, Hold instead
                 Console.ReadLine().Trim().ToLower();
             } // TODO: If the player chooses to draw (hit):
             // maybe if loop could of worked, but maybe i can keep it a while loop in this case and result is fine anyway, idk lol
-            
+            if (choice = )
             /*
-
             if choice in ['h', 'hit']:
 # - Draw exactly one card using the existing Cards.DrawCard method
             drawn_card = Cards.draw_card(deck)
