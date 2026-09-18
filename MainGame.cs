@@ -64,39 +64,40 @@
                 choice = Console.ReadLine().Trim().ToLower();
             } // TODO: If the player chooses to draw (hit):
 
-            if (choice = )
-            /*
-            if choice in ['h', 'hit']:
-# - Draw exactly one card using the existing Cards.DrawCard method
-            drawn_card = Cards.draw_card(deck)
-        
-# - Add the card to the player's hand
-            player_hand.append(drawn_card)
+            if (choice == 'h', 'hit').Trim().ToLower()
+            {
+                drawnCard = Cards.drawCard(deck) // Draw exactly one card using the existing Cards.DrawCard method
+                playerHand.Add(drawnCard); // Add the card to the player's hand
+                Console.WriteLine($"You drew: {drawnCard.rank} of {drawnCard.suit}"); // Display the newly drawn card
+                // Recalculate and display the updated hand total (handling Ace logic)
+                int score = 0;
+                int aces = 0;
+                for card in playerHand
+                {
+                    score += card.value;
+                    if card.rank == "Ace"
+                    {
+                        aces += 1
+                    }
+                } while score > 21 && aces > 0
+                {
+                    score -= 10;
+                    aces -= 1
+                    {
+                        Console.WriteLine($"Your current score is: {score}");
+                    }
+                    // Check if the player busted (score > 21)
+                    if score > 21
+                    {
+                        Console.WriteLine("Bust! You went over 21");
+                        yield break;
+                    } 
+                    // TODO: If the player chooses to hold (stand), break out of the prompt loop
 
-# - Display the newly drawn card
-            print(f"You drew: {drawn_card.rank} of {drawn_card.suit}")
+                }
 
-# - Recalculate and display the updated hand total (handling Ace logic)
-            score = 0
-            aces = 0
-
-            for card in player_hand:
-            score += card.value
-            if card.rank == "Ace":
-            aces += 1
-
-            while score > 21 and aces > 0:
-            score -= 10
-            aces -= 1
-
-            print(f"Your current score is: {score}")
-
-# - Check if the player busted (score > 21)
-            if score > 21:
-            print("Bust! You went over 21.")
-            break
-
-# TODO: If the player chooses to hold (stand), break out of the prompt loop
+            }
+            /*  
             elif choice in ['s', 'stand']:
             print("You chose to stand. Turn ends.")
             break
