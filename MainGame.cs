@@ -93,17 +93,21 @@
                         yield break;
                     } 
                     // TODO: If the player chooses to hold (stand), break out of the prompt loop
-
+                else (choice == ("score", "stand"))
+                {
+                    Console.WriteLine("You chose to stand. Turn ends.");
+                    yield break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid option. Please enter 'H' or 'S'.");
+                }
+                
                 }
 
             }
             /*  
-            elif choice in ['s', 'stand']:
-            print("You chose to stand. Turn ends.")
-            break
-
-            else:
-            print("Invalid option. Please enter 'H' or 'S'.")*/
+            */
         }
     }
 }
