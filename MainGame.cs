@@ -64,47 +64,45 @@
                 choice = Console.ReadLine().Trim().ToLower();
             } // TODO: If the player chooses to draw (hit):
 
-            if (choice == 'h', 'hit').Trim().ToLower()
+            if (choice == "h" || choice == "hit")
             {
-                drawnCard = Cards.drawCard(deck) // Draw exactly one card using the existing Cards.DrawCard method
+                Cards drawnCard = Cards.DrawCard(deck); // Draw exactly one card using the existing Cards.DrawCard method
                 playerHand.Add(drawnCard); // Add the card to the player's hand
-                Console.WriteLine($"You drew: {drawnCard.rank} of {drawnCard.suit}"); // Display the newly drawn card
+                Console.WriteLine($"You drew: {drawnCard.Rank} of {drawnCard.Suit}"); // Display the newly drawn card
                 // Recalculate and display the updated hand total (handling Ace logic)
                 int score = 0;
                 int aces = 0;
-                for card in playerHand
+                foreach (Cards card in playerHand)
                 {
-                    score += card.value;
-                    if card.rank == "Ace"
+                    score += card.Value;
+                    if (card.Rank == "Ace")
                     {
-                        aces += 1
+                        aces += 1;
                     }
-                } while score > 21 && aces > 0
+                } 
+                while (score > 21 && aces > 0)
                 {
                     score -= 10;
-                    aces -= 1
-                    {
-                        Console.WriteLine($"Your current score is: {score}");
-                    }
-                    // Check if the player busted (score > 21)
-                    if score > 21
-                    {
-                        Console.WriteLine("Bust! You went over 21");
-                        yield break;
-                    } 
-                    // TODO: If the player chooses to hold (stand), break out of the prompt loop
-                else (choice == ("score", "stand"))
-                {
-                    Console.WriteLine("You chose to stand. Turn ends.");
-                    yield break;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid option. Please enter 'H' or 'S'.");
-                }
-                
+                    aces -= 1;
                 }
 
+                Console.WriteLine($"Your current score is: {score}");
+
+                // Check if the player busted (score > 21)
+                if (score > 21)
+                {
+                    Console.WriteLine("Bust! You went over 21");
+                    return;
+                } 
+            }
+            // TODO: If the player chooses to hold (stand), break out of the prompt loop
+            else if (choice == "s" || choice == "stand" || choice == "hold")
+            {
+                Console.WriteLine("You chose to stand. Turn ends.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid option. Please enter 'H' or 'S'.");
             }
             /*  
             */
