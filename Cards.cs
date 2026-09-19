@@ -98,4 +98,47 @@ class Cards
        // 4. Return the saved card
        return drawnCard;
     }
+
+    /*
+    US-05: As a player, I want to see the cards in my hand, so that I know what I have drawn.
+    US-13: As a player, I want Aces to count as either 1 or 11, so that hands are evaluated according to the rules of Blackjack.
+    Developer Notes:
+    - Update the existing method for calculating the value of a hand.
+    - An Ace counts as 11 whenever possible without causing the hand to go bust.
+    - If counting an Ace as 11 would cause the hand to exceed 21, it counts as 1 instead.
+    */
+    public static int CalculateHandValue(List<Cards> hand)
+    {
+        int score = 0;
+        int aces = 0;
+
+        foreach (Cards card in hand)
+        {
+            score += card.Value;
+            if (card.Rank == "Ace")
+            {
+                aces++;
+            }
+        }
+
+        // Reduce Ace values from 11 to 1 (-10 per Ace) as long as total score is > 21
+        while (score > 21 && aces > 0)
+        {
+            score -= 10;
+            aces--;
+        }
+
+        return score;
+    }
+
+    /*
+    US-07: As a player, I want the game to tell me when I have gone bust, so that I know I have lost the round.
+    Developer Notes:
+    - Create a method that determines whether a hand has gone bust.
+    - Reuse the existing method for calculating the value of a hand.
+    */
+    public static bool IsBust(List<Cards> hand)
+    {
+        return CalculateHandValue(hand) > 21;
+    }
 }
